@@ -20,7 +20,7 @@ export class ToggleComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleChanged(e) {
+  handleChanged(e): void {
     this.checked = !this.checked;
     this.valueChanged.emit(this.checked);
   }
