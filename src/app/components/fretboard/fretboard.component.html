@@ -1,8 +1,7 @@
+<div class="controls">
+  <app-toggle [checked]="showNotes" (valueChanged)="setShowNotes($event)"></app-toggle>
+</div>
 <div class="component">
-  <div class="controls">
-    <app-toggle [checked]="showNotes" (valueChanged)="setShowNotes($event)"></app-toggle>
-  </div>
-
   <div class="fretboard">
     <div *ngFor="let string of strings" class="string">
       <div *ngFor="let fret of string.frets; let i = index" class="fret">
