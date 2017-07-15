@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FretboardComponent implements OnInit {
 
-  positions: Array<number> = Array.from(new Array(13), (x,i) => i);
+  showNotes: boolean = false;
   strings: any;
 
   constructor() { }
@@ -35,6 +35,10 @@ export class FretboardComponent implements OnInit {
 
   selectNote(note){
     alert(`You selected ${note}`);
+  }
+
+  setShowNotes(event){
+    this.showNotes = event;
   }
 
 }
