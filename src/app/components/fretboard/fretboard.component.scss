@@ -1,0 +1,43 @@
+.fretboard {
+    display:  table;
+        width:100%;
+
+    .string {
+        display: table-row;
+        width: auto;
+
+        .fret {
+            border-right: 1px solid black;
+            display: table-cell;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            position: relative;
+            text-align: center;
+            width: percentage(1/13);
+
+            .note {
+                align-items: center;
+                background-color: white;
+                border: 1px solid black;
+                border-radius: 50%;
+                cursor: pointer;
+                display: inline-flex;
+                height: 50px;
+                justify-content: center;
+                width: 50px;
+            }
+
+            &:before {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                height: 3px;
+                background: black;
+                content: "";
+                width: 100%;
+                display: block;
+                z-index: -1;
+            }
+        }
+    }
+}

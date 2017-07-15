@@ -1,0 +1,9 @@
+<div class="fretboard">
+  <div *ngFor="let string of strings" class="string">
+    <div *ngFor="let fret of string.frets" class="fret">
+      <div class="note" (click)="selectNote(fret)">
+        {{ fret }}
+      </div>
+    </div>
+  </div>
+</div>
