@@ -3,7 +3,7 @@
     <div *ngFor="let string of strings" class="string">
       <div *ngFor="let fret of string.frets; let i = index" class="fret">
         <div class="note" (click)="selectNote(fret)">
-          {{ fret }}
+          <!-- {{ fret }} -->
         </div>
       </div>
     </div>
