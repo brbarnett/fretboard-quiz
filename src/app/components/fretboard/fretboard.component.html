@@ -13,7 +13,8 @@
   <div class="fretboard-overlay">
     <div class="overlay">
       <div *ngFor="let position of positions" class="fret">
-        <div *ngIf="[3, 5, 7, 9, 12].includes(position);" class="marker"></div>
+        <div *ngIf="[3, 5, 7, 9].includes(position);" class="marker"></div>
+        <div *ngIf="position === 12" class="marker double"></div>
       </div>
     </div>
   </div>
