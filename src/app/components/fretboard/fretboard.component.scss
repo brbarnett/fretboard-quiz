@@ -38,6 +38,14 @@
                 display: block;
                 z-index: -1;
             }
+
+            &:nth-child(1) {
+                border-right: 3px solid black !important;
+
+                &:before {
+                    background: none !important;
+                }
+            }
         }
     }
 }
