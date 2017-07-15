@@ -1,8 +1,19 @@
-<div class="fretboard">
-  <div *ngFor="let string of strings" class="string">
-    <div *ngFor="let fret of string.frets" class="fret">
-      <div class="note" (click)="selectNote(fret)">
-        {{ fret }}
+<div class="component">
+  <div class="fretboard">
+    <div *ngFor="let string of strings" class="string">
+      <div *ngFor="let fret of string.frets; let i = index" class="fret">
+        <div class="note" (click)="selectNote(fret)">
+          {{ fret }}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="fretboard-overlay">
+    <div class="overlay">
+      <div *ngFor="let position of positions" class="fret">
+        <div *ngIf="[3, 5, 7, 9, 12].includes(position);" class="marker"></div>
       </div>
     </div>
   </div>

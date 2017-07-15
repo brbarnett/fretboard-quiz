@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FretboardComponent implements OnInit {
 
+  positions: Array<number> = Array.from(new Array(13), (x,i) => i);
   strings: any;
 
   constructor() { }

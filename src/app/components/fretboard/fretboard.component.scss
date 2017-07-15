@@ -1,11 +1,30 @@
-.fretboard {
+.component {
+    align-items: center;
+    display: flex;
+    position: relative;
+
+    .fretboard,
+.fretboard-overlay {
     display:  table;
-        width:100%;
+    width:100%;
+
+    .string,
+    .overlay {
+        display: table-row;
+        width: 100%;
+    }
+
+    // .overlay {
+    //     //margin-top: -100px;
+
+    //     .fret {
+    //         display: table-cell;
+    //         text-align: center;
+    //         width: percentage(1/13);
+    //     }
+    // }
 
     .string {
-        display: table-row;
-        width: auto;
-
         .fret {
             border-right: 1px solid black;
             display: table-cell;
@@ -27,7 +46,7 @@
                 width: 50px;
             }
 
-            &:before {
+            &:after {
                 position: absolute;
                 left: 0;
                 top: 50%;
@@ -42,10 +61,41 @@
             &:nth-child(1) {
                 border-right: 3px solid black !important;
 
-                &:before {
+                &:after {
                     background: none !important;
                 }
             }
+        }
+    }
+}
+
+    .fretboard-overlay {
+        position: absolute;
+        width: 100%;
+
+        .overlay {
+            .fret {
+            display: table-cell;
+            text-align: center;
+            width: percentage(1/13);
+
+            .marker {
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                position: relative;
+                z-index: -1;
+
+                &:before{ 
+                    background-color: black;
+                    border-radius: 50%;
+                    content: "";
+                    display: block;
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+        }
         }
     }
 }
