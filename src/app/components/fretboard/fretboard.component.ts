@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-fretboard',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FretboardComponent implements OnInit {
 
-  positions: Array<number> = Array.from(new Array(13), (x,i) => i);
+  positions: Array<number> = _.range(13);
   showNotes: boolean = false;
   sixStrings: boolean = false;
   strings: any;
@@ -41,6 +42,10 @@ export class FretboardComponent implements OnInit {
         frets: ['E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E']
       }
     ]
+  }
+
+  includes(collection, value): boolean {
+    return _.includes(collection, value);
   }
 
   getStrings():any {
