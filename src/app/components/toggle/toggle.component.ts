@@ -12,6 +12,9 @@ export class ToggleComponent implements OnInit {
   @Input()
   checked: boolean = false;
 
+  @Input()
+  label: string = '';
+
   @Output()
   valueChanged = new EventEmitter();
 
