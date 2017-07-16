@@ -1,9 +1,10 @@
 <div class="controls">
-  <app-toggle [checked]="showNotes" (valueChanged)="setShowNotes($event)"></app-toggle>
+  <app-toggle [checked]="showNotes" [label]="'Show notes'" (valueChanged)="setShowNotes($event)"></app-toggle>
+  <app-toggle [checked]="false" [label]="'6 string'" (valueChanged)="setSixStrings($event)"></app-toggle>
 </div>
 <div class="component">
   <div class="fretboard">
-    <div *ngFor="let string of strings" class="string">
+    <div *ngFor="let string of getStrings()" class="string">
       <div *ngFor="let fret of string.frets; let i = index" class="fret">
         <div class="note" (click)="selectNote(fret)">
           <span *ngIf="showNotes">{{ fret }}</span>
