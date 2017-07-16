@@ -18,7 +18,7 @@ export class FretboardComponent implements OnInit {
     this.strings = [
       {
         name: 'e',
-        frets: ['E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'B']
+        frets: ['E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E']
       },
       {
         name: 'B',
