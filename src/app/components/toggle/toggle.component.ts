@@ -24,5 +24,4 @@ export class ToggleComponent implements OnInit {
     this.checked = !this.checked;
     this.valueChanged.emit(this.checked);
   }
-
 }
