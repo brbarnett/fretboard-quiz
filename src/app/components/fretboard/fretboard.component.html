@@ -1,7 +1,7 @@
-<div class="controls">
+<!-- <div class="controls">
   <app-toggle [checked]="showNotes" [label]="'Show notes'" (valueChanged)="setShowNotes($event)"></app-toggle>
   <app-toggle [checked]="false" [label]="'6 string'" (valueChanged)="setSixStrings($event)"></app-toggle>
-</div>
+</div> -->
 <div class="component">
   <div class="fretboard">
     <div *ngFor="let string of getStrings()" class="string" [ngClass]="{'enabled': string.name === stringToEnable}">
