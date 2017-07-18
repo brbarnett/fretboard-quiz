@@ -36,7 +36,7 @@ export class FretboardComponent implements OnInit {
     return this.sixStrings ? this.strings : this.strings.slice(2);
   }
 
-  selectNote(note) {
+  playNote(note) {
     this.quizService.notePlayed.next(note);
   }
 

@@ -14,7 +14,7 @@ export class QuizComponent implements OnInit {
   constructor(private quizService: QuizService) { }
 
   ngOnInit() {
-    this.quizService.noteToQuiz.subscribe(note => this.noteToQuiz = note);
+    this.quizService.noteToQuizUpdated.subscribe(note => this.noteToQuiz = note);
   }
 
 }
