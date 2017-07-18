@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { QuizService } from '../../services/quiz.service';
+
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizComponent implements OnInit {
 
-  constructor() { }
+  noteToQuiz: string = '';
+
+  constructor(private quizService: QuizService) { }
 
   ngOnInit() {
+    this.quizService.noteToQuiz.subscribe(note => this.noteToQuiz = note);
   }
 
 }

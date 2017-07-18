@@ -37,7 +37,7 @@ export class FretboardComponent implements OnInit {
   }
 
   selectNote(note) {
-    alert(`You selected ${note}`);
+    this.quizService.notePlayed.next(note);
   }
 
   setShowNotes(event) {
