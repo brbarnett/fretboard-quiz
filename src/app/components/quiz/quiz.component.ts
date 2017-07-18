@@ -10,10 +10,17 @@ import { QuizService } from '../../services/quiz.service';
 export class QuizComponent implements OnInit {
 
   noteToQuiz: string = '';
+  message: string = '';
 
   constructor(private quizService: QuizService) { }
 
   ngOnInit() {
+    this.quizService.messageUpdated.subscribe(message => {
+      this.message = message;
+      setTimeout(() => {
+        this.message = '';
+      }, 1000);
+    })
     this.quizService.noteToQuizUpdated.subscribe(note => this.noteToQuiz = note);
   }
 

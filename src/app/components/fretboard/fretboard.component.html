@@ -4,9 +4,9 @@
 </div>
 <div class="component">
   <div class="fretboard">
-    <div *ngFor="let string of getStrings()" class="string">
+    <div *ngFor="let string of getStrings()" class="string" [ngClass]="{'enabled': string.name === stringToEnable}">
       <div *ngFor="let fret of string.frets; let i = index" class="fret">
-        <div class="note" (click)="playNote(fret)">
+        <div class="note" (click)="playNote(string.name, fret)" disabled="disabled">
           <span *ngIf="showNotes">{{ fret }}</span>
         </div>
       </div>

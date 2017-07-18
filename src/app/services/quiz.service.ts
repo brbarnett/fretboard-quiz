@@ -4,10 +4,13 @@ import * as _ from 'lodash';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Subject } from 'rxjs/Subject';
 
+import { Note } from '../models/note';
+
 @Injectable()
 export class QuizService {
 
-  notePlayed: Subject<string> = new Subject<string>();
+  messageUpdated: Subject<string> = new Subject<string>();
+  notePlayed: Subject<Note> = new Subject<Note>();
   notes: Array<string> = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
   noteToQuiz: string = '';
   noteToQuizUpdated: BehaviorSubject<string> = new BehaviorSubject<string>(this.getRandomNote());
@@ -35,8 +38,16 @@ export class QuizService {
   }
 
   testQuiz(note) {
-    if (note === this.noteToQuiz)
+    console.log(note);
+
+    if (note.note === this.noteToQuiz && note.string === this.stringToQuiz) {
+      this.messageUpdated.next('Correct!');
+
       this.runQuiz();
+    }
+    else {
+      this.messageUpdated.next('Incorrect...');
+    }
   }
 
 }
