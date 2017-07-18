@@ -1,4 +1,6 @@
-# FretboardQuiz
+# Fretboard Quiz
+
+Project is hosted in Azure: https://fretboard-quiz.azurewebsites.net/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
 
